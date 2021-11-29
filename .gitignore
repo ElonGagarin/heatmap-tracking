@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+yolov5x.pt
+yolov5/data/
+yolov5/runs/
