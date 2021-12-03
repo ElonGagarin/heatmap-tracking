@@ -11,7 +11,7 @@ Usage:
                                                              'https://youtu.be/Zgi9g1ksQHc'  # YouTube
                                                              'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
 
-python yolov5/detect.py --weights yolov5x.pt --source input.mp4 --classes 0
+python yolov5/detect.py --weights yolov5x.pt --source input.mp4 --classes 0 --img-size 1000
     
 """
 
@@ -200,6 +200,9 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
     if save_txt or save_img:
         s = f"\n{len(list(save_dir.glob('labels/*.txt')))} labels saved to {save_dir / 'labels'}" if save_txt else ''
         LOGGER.info(f"Results saved to {colorstr('bold', save_dir)}{s}")
+
+        return save_dir
+
     if update:
         strip_optimizer(weights)  # update model (to fix SourceChangeWarning)
 
@@ -238,9 +241,11 @@ def parse_opt():
 
 def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
-    run(**vars(opt))
+    path = run(**vars(opt))
+    return path
 
 
 if __name__ == "__main__":
     opt = parse_opt()
-    main(opt)
+    path = main(opt)
+    print(path)
