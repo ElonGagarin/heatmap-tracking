@@ -131,3 +131,5 @@ dmypy.json
 yolov5x.pt
 yolov5/data/
 yolov5/runs/
+1.mp4
+input.mp4
