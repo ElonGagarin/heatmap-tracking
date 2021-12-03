@@ -11,7 +11,7 @@ Usage:
                                                              'https://youtu.be/Zgi9g1ksQHc'  # YouTube
                                                              'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
 
-python yolov5/detect.py --weights yolov5x.pt --source C:/data_for_yolo_v5/bus.jpg --classes 0
+python yolov5/detect.py --weights yolov5x.pt --source input.mp4 --classes 0
     
 """
 
