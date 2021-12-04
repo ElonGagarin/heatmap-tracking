@@ -1,10 +1,10 @@
 import cv2
 
-def merg():
+def merge():
     first_frame = cv2.imread('frame_back.jpg')
     color_image = cv2.imread('frame_.jpg')
 
-    # ret, mask = cv2.threshold(color_image, 130, color_image, cv2.THRESH_BINARY)
+    # ret, color_image = cv2.threshold(color_image, 130, 255, cv2.THRESH_TOZERO) # THRESH_TOZERO  THRESH_BINARY
 
     # mask_inv = cv2.bitwise_not(mask)
 
@@ -15,3 +15,4 @@ def merg():
     result_overlay = cv2.addWeighted(first_frame, 0.7, color_image, 0.7, 0)
 
     cv2.imwrite('frame_back_fin.jpg', result_overlay)
+merge()

@@ -14,7 +14,7 @@ from matplotlib.ticker import MaxNLocator
 
 plt.rcParams['figure.figsize'] = (23.0, 10.0) # set default size of plots
 
-levels = MaxNLocator(nbins=1000).tick_values(zi.min(), zi.max())
+levels = MaxNLocator(nbins=1000).tick_values(   .min(), zi.max())
 cmap = plt.get_cmap('YlOrRd')
 
 # alpha=0.5 will make the plots semitransparent

@@ -1,10 +1,14 @@
 import cv2
-# import subprocess
 
+# ===============================
+# Первая функция работает гораздо быстрее, но иногда подвисает на больших файлах... 
+# Вторая надежнее но медленее 
+# =================================
+
+# import subprocess
 # def change_speed(input_path='1.mp4', 
 #                     speed='0.10',
 #                     out_path='input.mp4'):
-
 #     command = f'ffmpeg -i {input_path} -vf  "setpts={speed}*PTS" {out_path}'
 #     subprocess.run(command, shell=True)
 
@@ -24,7 +28,6 @@ def change_speed_1(input_path='1.mp4',
                             cv2.VideoWriter_fourcc(*'MP4V'), 
                             fps, 
                             (frame_w, frame_h))
-
 
     for i, n in enumerate(range(nb_frames)):
         _, img = video_reader.read()
