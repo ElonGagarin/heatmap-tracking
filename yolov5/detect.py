@@ -43,7 +43,7 @@ from utils.torch_utils import select_device, time_sync
 def run(
         source,          # file/dir/URL/glob, 0 for webcam
         weights=ROOT / 'yolov5x.pt',  # model.pt path(s)
-        imgsz=1024,  # inference size (pixels)
+        imgsz=[1024, 1024],  # inference size (pixels)
         conf_thres=0.25,  # confidence threshold
         iou_thres=0.45,  # NMS IOU threshold
         max_det=1000,  # maximum detections per image
@@ -242,12 +242,12 @@ def parse_opt():
 def yolo(path):
     check_requirements(exclude=('tensorboard', 'thop'))
     path_pred = run(path)
-    return path_pred
+    return str(path_pred)  + '/labels'
 
 def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
-    path = run(**vars(opt))
-    return path + '/labels'
+    run(**vars(opt))
+
 
 
 if __name__ == "__main__":

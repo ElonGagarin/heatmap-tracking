@@ -16,8 +16,9 @@
 - Проверить и запустить скрипт с cwd  
    
     ```
-    python create_heatmap.py  +++++ аргументы
+    python create_heatmap.py  --input_path <путь_до_файла.mp4>
     ```
+
 -----
 
 ## Для включения в пайплайн этой модели, нужно инициализировать класс Create_Heatmap() в скрипте create_heatmap.py   
@@ -30,4 +31,11 @@
 - threshold  (int) - какая ширина пикселя(heatmap) для одного ББ  
 - background_count (int) - количество фреймов для получения фона без движущихся объектов  
 - transparency  (float) - коэффициент прозрачности heatmap  
-    
+     
+-------  
+  
+## Важно понимать, что в зависимости от ракурса, продолжительности и интенсивности трафика людей. Нужно менять параметры: intensity, threshold, transparency, background_count  
+  
+-------
+
+

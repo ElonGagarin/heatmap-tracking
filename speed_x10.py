@@ -1,5 +1,5 @@
 import cv2
-
+import tqdm
 # ===============================
 # Первая функция работает гораздо быстрее, но иногда подвисает на больших файлах... 
 # Вторая надежнее но медленее 
@@ -29,7 +29,7 @@ def change_speed_1(input_path='1.mp4',
                             fps, 
                             (frame_w, frame_h))
 
-    for i, n in enumerate(range(nb_frames)):
+    for i, n in tqdm.tqdm(enumerate(range(nb_frames))):
         _, img = video_reader.read()
         if i%speed == 0:
             video_writer.write(img)

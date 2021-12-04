@@ -47,8 +47,8 @@ def one_mask(path, base, height, width, threshold, intensity):
     for i in line.split('\n'):
         try:
             x, y, h, w = i.split()[1:]
-            x_new = int(float(x)*width)  # h_new
-            y_new = int(float(y)*height + float(h)*height)
+            y_new = int((float(x))*width + float(h)*width) 
+            x_new = int((float(y))*height)
 
             base[x_new-threshold:x_new+threshold,y_new-threshold:y_new+threshold] = intensity
         except:
@@ -88,7 +88,7 @@ def merge(output_path, transparency=0.7):
     first_frame = cv2.imread('./background.jpg')
     color_image = cv2.imread('./mask.jpg')
 
-    # _, color_image = cv2.threshold(color_image, 130, 255, cv2.THRESH_TOZERO)
+    _, color_image = cv2.threshold(color_image, 130, 255, cv2.THRESH_TOZERO)
     result_overlay = cv2.addWeighted(first_frame, 0.7, color_image, transparency, 0)
 
     cv2.imwrite(output_path, result_overlay)
