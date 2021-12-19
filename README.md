@@ -38,4 +38,11 @@
   
 -------
 
-
+Добавить перенос трекинга на карту-план. 
+калиброка камеры:  
+https://www.singularis-lab.com/docs/materials/SECR-2016-workshop.pdf   
+https://russianblogs.com/article/6198854553/  
+https://api-2d3d-cad.com/calibration-camera/  
+https://blog.csdn.net/qq_41685265/article/details/104149451    
+https://blog.csdn.net/qq_41685265/article/details/104111004  
+https://blog.csdn.net/qq_41685265/article/details/104100258   
